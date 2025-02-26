@@ -1,0 +1,181 @@
+@font-face {
+    font-family: 'MyCustomFont' ;
+    font-weight: 500;
+    src: url('../assets/fonts/static/DMSans-Medium.woff2') format('woff2'),
+         url('fonts/custom-font.ttf') format('truetype');
+  }
+ 
+@font-face {
+  font-family: 'MyCustomFont';
+  font-weight: 500;
+  src: url('../assets/fonts/static/DMSans-MediumItalic.woff2') format('woff2'),
+       url('fonts/custom-font.ttf') format('truetype');
+} 
+@font-face {
+    font-family: 'MyCustomFont';
+    font-weight: 400;
+    src: url('../assets/fonts/static/DMSans-Regular.woff2') format('woff2'),
+         url('fonts/custom-font.ttf') format('truetype');
+  }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+body{
+    font-family: MyCustomFont;
+}
+
+/* styling the card-container */
+.cards-container{
+    display: grid;
+    margin: 1.4em;
+    gap: 20px;
+}
+
+
+
+/*  generic card style*/
+.card{
+    font-weight: 400;
+    box-sizing: border-box;
+    padding: 1.3em;
+    border-radius: 0.5em;
+    /* min-height: 200px; */
+    font-weight: 400;
+    /* justify-content: space-between;     */
+
+}
+
+/* generic img control */
+img{
+    max-width: 100% ;
+    height: auto;
+    width: 60%;
+    
+}
+
+/* styling individual cards */
+.card:nth-of-type(1){
+    background-color: hsl(256, 67%, 59%);
+    color: white;
+}
+.inner-card1-div{
+    justify-self: flex-end;
+}
+.card:nth-of-type(2){
+    background-color: hsl(254, 88%, 90%);
+}
+.card:nth-of-type(3){
+    background-color: hsl(39, 100%, 71%);
+}
+.card:nth-of-type(4){
+    background-color: hsl(254, 88%, 90%);
+}
+.card:nth-of-type(5){
+    background-color: hsl(256, 67%, 59%);
+}
+.card:nth-of-type(6){
+    background-color: hsl(254, 88%, 90%);
+}
+.card:nth-of-type(7){
+    background-color: hsl(31, 66%, 93%);
+}
+.card:nth-of-type(8){
+    background-color: hsl(39, 100%, 71%);
+}
+
+/* utilities */
+.bold{
+    font-weight: 500;
+    font-size: 2em;
+}
+.quicker{
+    color: hsl(256, 67%, 59%);
+}
+.tenx{
+    color: hsl(39, 100%, 71%);
+    
+}
+.biggest{
+    font-weight: 500;
+    font-size: 2em;
+    text-align: center;
+}
+.card-center{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content:  center;
+    align-items: center;
+}
+.fiftysix{
+    display: block;
+    font-weight: 500;
+    font-size: 2em;
+}
+
+/* media query  */
+@media(min-width: 900px){
+    body{
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 100vw;
+        min-height: 100vh;
+    }
+    .cards-container{
+        align-self: center;
+        width: 80%;
+        height: 100vh;
+        box-sizing: border-box;
+    } 
+    .grid-col-span-2{
+        grid-column: span 2;
+    }    
+    .cards-container{
+        
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(3, minmax(auto, 1fr));
+    }
+    .card{
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+        max-height: 100%;
+        overflow: hidden;
+        font-size: clamp(12px, 2vw, 16px); 
+    }
+    .card:nth-of-type(7){
+        grid-column: 1;
+        grid-row: 1;
+    }
+    .card:nth-of-type(8){
+        grid-column: 1;
+        grid-row: 2/ 4;
+    }
+    .card:nth-of-type(4){
+        grid-column: 4;
+        grid-row: 1 / 3;
+        grid-column-start: 4;
+    }
+    .card:nth-of-type(6){
+        grid-column: 2;
+        grid-row: 3;
+    }
+    .card:nth-of-type(5){
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        box-sizing: border-box;
+    }
+    .card:nth-of-type(5) img{
+        max-width: 50%;
+        max-height: 100%;
+    }
+    .bold{
+        font-size: 1.5em;
+    }
+}
